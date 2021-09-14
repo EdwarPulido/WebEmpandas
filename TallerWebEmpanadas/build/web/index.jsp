@@ -22,6 +22,7 @@
                             <img src="Imagenes/NUEVO_LOGO_KASABE.png" alt="100" width="400" /><!-- imagenen logo -->
                             <label>
                                 <h1> Bienvenidos KsabeMejor </h1>
+                                <h1> --- </h1>
                             </label>
                         </div>
                         <div class="form-group"> 
