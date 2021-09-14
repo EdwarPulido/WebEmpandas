@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container-fluid">
 
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
