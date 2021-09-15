@@ -14,52 +14,41 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-            <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a style="margin-left: 10px; border: none"  class="btn btn-outline-ligth" href="#">KsabeMejor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border: none"  class="btn btn-outline-ligth" href="#">PRODUCTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-ligth" href="#">EMPLEADO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-ligth" href="#">CLIENTES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-ligth" href="#">VENTAS</a>
+                    </li>
 
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">KsabeMejor</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">PRODUCTO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">EMPLEADO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">CLIENTES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">VENTAS</a>
-                        </li>
-
-                        <div class="container">
-                            <div class="btn-holder">
-                            </div>
-                        </div>
-                        
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                USUARIO
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="text-align: center"> 
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                        </li>
-
-                    </ul>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-outline-ligth dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    USUARIO INGRESADO
+                </button>
+                <div class="dropdown-menu text-center">
+                    <li><a class="dropdown-item" href="#">
+                        <img src="Imagenes/48f997ae7a801924cde1d5d849291c8e.png" alt="60" width="60"/>
+                    </a></li>
+                    <li><a class="dropdown-item" href="#">userio</a></li>
+                    <li><a class="dropdown-item" href="#">Usuario@gmail.com</a></li>
+                    <li><div class="dropdown-divider"></div></li>
+                    <li><a class="dropdown-item" href="#">SALIR</a></li>
                 </div>
             </div>
         </nav>
-
-
-
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
