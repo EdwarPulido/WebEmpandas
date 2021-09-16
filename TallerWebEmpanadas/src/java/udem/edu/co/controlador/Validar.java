@@ -73,6 +73,7 @@ public class Validar extends HttpServlet {
             String pass = request.getParameter("txtpass");
             em = edao.validar(user, pass);//llamamos al metodo validar user para realizar al validacion
             if (em.getUser() != null) {//validar usuario y redireccionar al controlador
+                request.setAttribute("usuario", em);//ENVIAR USUARIO PASS A BOTTON USUARIO REGISTRADO
                 request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
             } else {//validar usuario y redireccionar al index
                 request.getRequestDispatcher("index.jsp").forward(request, response);

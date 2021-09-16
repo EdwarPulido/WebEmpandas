@@ -18,18 +18,17 @@
                 <div class="card-body"><!-- GRUPO 1 LOGO-WELCOME -->
                     <form class="form-sing" action="Validar" method="POST">
                         <div class="form-group text-center ">
-                            <h3>LOGIN</h3>
-                            <img src="Imagenes/NUEVO_LOGO_KASABE.png" alt="100" width="400" /><!-- imagenen logo -->
+                            <img src="Imagenes/NUEVO_LOGO_KASABE.png" alt="100" width="500" /><!-- imagenen logo -->
                             <label>
-                                <h1> Bienvenidos KsabeMejor </h1>
-                             
+                                <h1>Bienvenidos KsabeMejor</h1>
+                                <h1></h1>
                             </label>
                         </div>
                         <div class="form-group"> 
                             <label>Usuario:</label><!-- Usuario nombre -->
                             <input type="text" name="txtuser" class="from-control">
                         </div>
-                        <div class="form-group"><!-- Usuario contraseña -->
+                        <div class="form-group " ><!-- Usuario contraseña -->
                             <label>Contraseña:</label>
                             <input type="password" name="txtpass" class="from-control">
                         </div>
