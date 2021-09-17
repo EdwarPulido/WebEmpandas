@@ -24,11 +24,11 @@
                                 <h1></h1>
                             </label>
                         </div>
-                        <div class="form-group"> 
+                        <div class="form-group col-lg-4 "> 
                             <label>Usuario:</label><!-- Usuario nombre -->
                             <input type="text" name="txtuser" class="from-control">
                         </div>
-                        <div class="form-group " ><!-- Usuario contraseña -->
+                        <div class="form-group  col-lg-4  " ><!-- Usuario contraseña -->
                             <label>Contraseña:</label>
                             <input type="password" name="txtpass" class="from-control">
                         </div>

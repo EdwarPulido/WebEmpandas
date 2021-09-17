@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import udem.edu.co.Modelo.Clientes;
+import udem.edu.co.Modelo.ClientesDAO;
 import udem.edu.co.Modelo.Empleado;
 import udem.edu.co.Modelo.EmpleadoDAO;
 
@@ -22,6 +24,8 @@ public class Validar extends HttpServlet {
 
     EmpleadoDAO edao = new EmpleadoDAO();//instanciamos la clases EmpleadoDAO
     Empleado em = new Empleado();//instanciamos la clases Empleado
+    Clientes cli=new Clientes();
+    ClientesDAO Cedao= new ClientesDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -71,11 +75,19 @@ public class Validar extends HttpServlet {
         if (accion.equalsIgnoreCase("Ingresar")) {
             String user = request.getParameter("txtuser");
             String pass = request.getParameter("txtpass");
+            
             em = edao.validar(user, pass);//llamamos al metodo validar user para realizar al validacion
+            cli =Cedao.validar(user, pass);
+            
             if (em.getUser() != null) {//validar usuario y redireccionar al controlador
                 request.setAttribute("usuario", em);//ENVIAR USUARIO PASS A BOTTON USUARIO REGISTRADO
                 request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
-            } else {//validar usuario y redireccionar al index
+            }
+            if (cli.getCedula()!= null) {//validar usuario y redireccionar al controlador
+                request.setAttribute("IdCliente", cli);//ENVIAR USUARIO PASS A BOTTON USUARIO REGISTRADO
+                request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
+            }
+            else {//validar usuario y redireccionar al index
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         } else {//Si no presiona ingresar
