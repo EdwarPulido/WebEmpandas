@@ -5,7 +5,6 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,7 @@
         <div class="d-flex">
             <div class="card col-sm-5">
                 <div class="card-body">
-                    <form>
+                    <form action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
                             <label>Cedula</label>
                             <input type="text" name="txtcc" class="form-control">
@@ -47,6 +46,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>CEDULA</th>
                             <th>NOMBRE</th>
                             <th>TELEFONO</th>
@@ -56,23 +56,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                         <c:forEach var="em" items="${empleados}">
                             <tr>
                                 <td>${em.getId()}</td>
-                                <c:out value="${em.getId()}"></c:out>
-                                <c:out value="${em.getCedula()}"></c:out>
-                                <c:out value="${em.getNom()}"></c:out>
-                                <c:out value="${em.getTel()}"></c:out>
-                                <c:out value="${em.getEstado()}"></c:out>
-                                <c:out value="${em.getUser()}"></c:out>
+                                <td>${em.getCedula()}</td>
+                                <td>${em.getNom()}</td>
+                                <td>${em.getTel()}</td>
+                                <td>${em.getEstado()}</td>
+                                <td>${em.getUser()}</td>
                                 <td>
-                                    <a>EDITAR</a>
+                                    <a>EDITAR </a>
                                     <a>ELIMINAR</a>
                                 </td>
                             </tr>
                         </c:forEach >  
-                        
+
                     </tbody>
                 </table>
             </div>

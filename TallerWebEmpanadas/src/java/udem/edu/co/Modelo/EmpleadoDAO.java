@@ -52,8 +52,9 @@ public class EmpleadoDAO {
 
     //OPERACIONES CRUD
     public List listar() {
-        String sql = "select * from empleado";
         List<Empleado> lista = new ArrayList<>();
+        String sql = "select * from Empleado";
+        
 
         try {
             con = cn.Conexion();
@@ -77,7 +78,7 @@ public class EmpleadoDAO {
     }
 
     public int agregar(Empleado em) {//Agregar en la base de datos 
-        String sql = "INSERT INTO empleado(Cedula, Telefono, Estado,  Nombres, User) VALUES(?, ?, ?, ?, ?) ";//consulta SQL para insertar
+        String sql = "insert into empleado (Cedula,Nombre,Telefono,Estado,User) VALUES(?, ?, ?, ?, ?) ";//consulta SQL para insertar
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -86,7 +87,9 @@ public class EmpleadoDAO {
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
+            
             ps.executeUpdate();
+            
 
         } catch (Exception e) {
             System.out.println("El error es de tipo " + e);
@@ -95,23 +98,23 @@ public class EmpleadoDAO {
     }
 
     public Empleado listarId(int id) {
-        Empleado em = new Empleado();
+        Empleado emp= new Empleado();
         String sql = "SELECT * FROM empleado WHERE IdEmpleado=" + id;
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                em.setCedula(rs.getString(2));
-                em.setNom(rs.getString(3));
-                em.setTel(rs.getString(4));
-                em.setEstado(rs.getString(5));
-                em.setUser(rs.getString(6));
+                emp.setCedula(rs.getString(2));
+                emp.setNom(rs.getString(3));
+                emp.setTel(rs.getString(4));
+                emp.setEstado(rs.getString(5));
+                emp.setUser(rs.getString(6));
             }
         } catch (Exception e) {
             System.out.println("El error es de tipo " + e);
         }
-        return em;
+        return emp;
     }
 
     public int actualizar(Empleado em) {//metodo para actualizar mediante la consulta sql

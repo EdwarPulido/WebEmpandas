@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -22,6 +22,8 @@ public class Validar extends HttpServlet {
 
     EmpleadoDAO edao = new EmpleadoDAO();//instanciamos la clases EmpleadoDAO
     Empleado em = new Empleado();//instanciamos la clases Empleado
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

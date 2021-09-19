@@ -46,7 +46,6 @@
                         <img src="Imagenes/48f997ae7a801924cde1d5d849291c8e.png" alt="40" width="40"/>
                     </a>
                     <a class="dropdown-item" href="#"> ${usuario.getUser()}</a>
-                    <a class="dropdown-item" href="#">Usuario@gmail.com</a>
                     <div class="dropdown-divider"></div>
 
                     <form action="Validar" method="POST">

@@ -34,12 +34,27 @@ public class Controlador extends HttpServlet {
         }
         if (menu.equals("Empleado")){
             switch (accion) {
+                
                 case "Listar":
                     List lista = edao.listar();
                     request.setAttribute("empleados",lista);
                     break;
+                    
                 case "Agregar":
+                    String Cedula=request.getParameter("txtcc");
+                    String Nombre=request.getParameter("txtnom");
+                    String Telefono=request.getParameter("txttel");
+                    String Estado=request.getParameter("txtest");
+                    String User=request.getParameter("txtuser");
+                    em.setCedula(Cedula);
+                    em.setNom(Nombre);
+                    em.setTel(Telefono);
+                    em.setEstado(Estado);
+                    em.setUser(User);
+                    edao.agregar(em);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);                    
                     break;
+                    
                 case "Editar":
                     break;
                 case "Eliminar":
@@ -48,6 +63,7 @@ public class Controlador extends HttpServlet {
                 default:
                     throw new AssertionError();
             }
+            request.getRequestDispatcher("Empleado.jsp").forward(request, response);
 
         }
 
