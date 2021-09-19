@@ -22,7 +22,6 @@ public class Validar extends HttpServlet {
 
     EmpleadoDAO edao = new EmpleadoDAO();//instanciamos la clases EmpleadoDAO
     Empleado em = new Empleado();//instanciamos la clases Empleado
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -71,10 +70,16 @@ public class Validar extends HttpServlet {
         if (accion.equalsIgnoreCase("Ingresar")) {
             String user = request.getParameter("txtuser");
             String pass = request.getParameter("txtpass");
+            
             em = edao.validar(user, pass);//llamamos al metodo validar user para realizar al validacion
+            
+            
             if (em.getUser() != null) {//validar usuario y redireccionar al controlador
-                request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
-            } else {//validar usuario y redireccionar al index
+                request.setAttribute("usuario", em);//ENVIAR USUARIO PASS A BOTTON USUARIO REGISTRADO
+                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+            }
+            
+            else {//validar usuario y redireccionar al index
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         } else {//Si no presiona ingresar

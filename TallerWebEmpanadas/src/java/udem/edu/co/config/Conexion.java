@@ -14,7 +14,7 @@ import java.sql.DriverManager;
  */
 public class Conexion {
     Connection con ;
-    String url ="jdbc:mysql://localhost:3306/tiendaudem_empanadas?useSSL=false";
+    String url ="jdbc:mysql://localhost:3306/tiendaudem_empanadas?useSSL=false"; //DIRECCION BASE DATOS
     String user ="root";
     String pass ="123456789";
     public Connection Conexion(){

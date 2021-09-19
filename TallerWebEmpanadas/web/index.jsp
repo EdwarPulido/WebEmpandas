@@ -18,17 +18,17 @@
                 <div class="card-body"><!-- GRUPO 1 LOGO-WELCOME -->
                     <form class="form-sing" action="Validar" method="POST">
                         <div class="form-group text-center ">
-                            <h3>LOGIN</h3>
-                            <img src="Imagenes/NUEVO_LOGO_KASABE.png" alt="100" width="400" /><!-- imagenen logo -->
+                            <img src="Imagenes/NUEVO_LOGO_KASABE.png" alt="100" width="500" /><!-- imagenen logo -->
                             <label>
-                                <h1> Bienvenidos KsabeMejor </h1>
+                                <h1>Bienvenidos KsabeMejor</h1>
+                                <h1></h1>
                             </label>
                         </div>
-                        <div class="form-group"> 
+                        <div class="form-group col-lg-4 "> 
                             <label>Usuario:</label><!-- Usuario nombre -->
                             <input type="text" name="txtuser" class="from-control">
                         </div>
-                        <div class="form-group"><!-- Usuario contraseña -->
+                        <div class="form-group  col-lg-4  " ><!-- Usuario contraseña -->
                             <label>Contraseña:</label>
                             <input type="password" name="txtpass" class="from-control">
                         </div>
@@ -36,10 +36,10 @@
                     </form>
                 </div>
             </div>
-        </div>        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        </div>
+        
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-
+            
     </body>
 </html>

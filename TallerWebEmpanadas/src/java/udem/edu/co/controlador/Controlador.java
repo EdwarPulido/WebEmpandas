@@ -6,11 +6,13 @@
 package udem.edu.co.controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import udem.edu.co.Modelo.Empleado;
+import udem.edu.co.Modelo.EmpleadoDAO;
 
 /**
  *
@@ -18,18 +20,49 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Controlador extends HttpServlet {
 
-   
-     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    Empleado em = new Empleado();
+    EmpleadoDAO edao = new EmpleadoDAO();
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            String accion = request.getParameter("accion");
-            System.out.println("Controlador.Validar.doPost()");
-            switch (accion){
-            case "Principal":
-                request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                break;
-            default:
-                throw new AssertionError();
+
+        String menu = request.getParameter("menu");
+        String accion = request.getParameter("accion");
+
+        if (menu.equals("Principal")) {
+            request.getRequestDispatcher("Principal.jsp").forward(request, response);
+        }
+        if (menu.equals("Empleado")){
+            switch (accion) {
+                case "Listar":
+                    List lista = edao.listar();
+                    request.setAttribute("empleados",lista);
+                    break;
+                case "Agregar":
+                    break;
+                case "Editar":
+                    break;
+                case "Eliminar":
+                    break;
+
+                default:
+                    throw new AssertionError();
             }
+
+        }
+
+        if (menu.equals("Clientes")) {
+            request.getRequestDispatcher("Clientes.jsp").forward(request, response);
+        }
+
+        if (menu.equals("Producto")) {
+            request.getRequestDispatcher("Producto.jsp").forward(request, response);
+
+        }
+        if (menu.equals("VentasNuevas")) {
+
+            request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
