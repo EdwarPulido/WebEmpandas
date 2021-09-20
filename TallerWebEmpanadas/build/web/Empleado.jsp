@@ -57,7 +57,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         <c:forEach var="em" items="${empleados}">
                             <tr>
                                 <td>${em.getId()}</td>

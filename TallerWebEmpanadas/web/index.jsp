@@ -24,15 +24,15 @@
                                 <h1></h1>
                             </label>
                         </div>
-                        <div class="form-group col-lg-4 "> 
+                        <div class="form-group col-lg-4 text-center "> 
                             <label>Usuario:</label><!-- Usuario nombre -->
-                            <input type="text" name="txtuser" class="from-control">
+                            <input type="text" name="txtuser" class="from-control text-center">
                         </div>
-                        <div class="form-group  col-lg-4  " ><!-- Usuario contraseña -->
+                        <div class="form-group  col-lg-4 text-center " ><!-- Usuario contraseña -->
                             <label>Contraseña:</label>
-                            <input type="password" name="txtpass" class="from-control">
+                            <input type="password" name="txtpass" class="from-control" >
                         </div>
-                        <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block">
+                        <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block ">
                     </form>
                 </div>
             </div>

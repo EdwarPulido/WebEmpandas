@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Empleado
-    Created on : 15/09/2021, 07:45:21 PM
+    Document   : Clientes
+    Created on : 15/09/2021, 07:45:46 PM
     Author     : Edwar
 --%>
 
@@ -50,9 +50,8 @@
                             <th>ID</th>
                             <th>CEDULA</th>
                             <th>NOMBRE</th>
-                            <th>TELEFONO</th>
+                            <th>Direccion</th>
                             <th>ESTADO</th>
-                            <th>USER</th>
                             <th>ACCION</th>
                         </tr>
                     </thead>
