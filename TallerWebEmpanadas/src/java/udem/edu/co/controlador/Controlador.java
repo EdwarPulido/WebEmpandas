@@ -121,10 +121,10 @@ public class Controlador extends HttpServlet {
                 case "Editar":
                     idclien = Integer.parseInt(request.getParameter("id"));
                     Cliente clien = cdao.listarId(idclien);
-                    request.setAttribute("Cliente", clien);
+                    request.setAttribute("cliente", clien);
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
-
+                 
                 case "Actualizar":
                     String Cedu = request.getParameter("txtcc");
                     String Nomb = request.getParameter("txtnom");

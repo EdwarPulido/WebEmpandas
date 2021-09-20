@@ -52,7 +52,7 @@ public class ClienteDAO {
     //OPERACIONES CRUD
     public List listar() {
         List<Cliente> lista = new ArrayList<>();
-        String sql = "select * from cliente";
+        String sql = "select * from Cliente";
 
         try {
             con = cn.Conexion();
