@@ -22,7 +22,7 @@
                         <a style="margin-left: 10px; border: none"  class="btn btn-outline-ligth" >KsabeMejor</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none"  class="btn btn-outline-ligth" href="Controlador?menu=Producto" target="myFrame">PRODUCTO</a>
+                        <a style="margin-left: 10px; border: none"  class="btn btn-outline-ligth" href="Controlador?menu=Producto&accion=Listar" target="myFrame">PRODUCTO</a>
                     </li>
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="btn btn-outline-ligth" href="Controlador?menu=Empleado&accion=Listar" target="myFrame">EMPLEADO</a>

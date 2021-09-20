@@ -16,6 +16,8 @@ import udem.edu.co.Modelo.Cliente;
 import udem.edu.co.Modelo.ClienteDAO;
 import udem.edu.co.Modelo.Empleado;
 import udem.edu.co.Modelo.EmpleadoDAO;
+import udem.edu.co.Modelo.Producto;
+import udem.edu.co.Modelo.ProductoDAO;
 
 /**
  *
@@ -27,20 +29,23 @@ public class Controlador extends HttpServlet {
     EmpleadoDAO edao = new EmpleadoDAO();
     Cliente cli = new Cliente();
     ClienteDAO cdao = new ClienteDAO();
+    Producto pro = new Producto();
+    ProductoDAO pdao = new ProductoDAO();
 
     int idemple;
     int idclien;
+    int idprod;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String menu = request.getParameter("menu");
         String accion = request.getParameter("accion");
-
+        //******************************PRINCIPAL**********************************
         if (menu.equals("Principal")) {
             request.getRequestDispatcher("Principal.jsp").forward(request, response);
         }
-
+        //******************************EMPLEADO**********************************
         if (menu.equals("Empleado")) {
             switch (accion) {
                 case "Listar":
@@ -96,7 +101,7 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
         }
-
+        //******************************CLIENTE**********************************
         if (menu.equals("Cliente")) {
             switch (accion) {
                 case "Listar":
@@ -124,7 +129,7 @@ public class Controlador extends HttpServlet {
                     request.setAttribute("cliente", clien);
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
-                 
+
                 case "Actualizar":
                     String Cedu = request.getParameter("txtcc");
                     String Nomb = request.getParameter("txtnom");
@@ -155,11 +160,58 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Cliente.jsp").forward(request, response);
         }
-
+        //******************************PRODUCTO**********************************
         if (menu.equals("Producto")) {
-            request.getRequestDispatcher("Producto.jsp").forward(request, response);
+            switch (accion) {
+                case "Listar":
+                    List lista = pdao.listar();
+                    request.setAttribute("productos", lista);
+                    break;
+                case "Agregar":
+                    String Nombre = request.getParameter("txtnom");
+                    int Precio = Integer.parseInt(request.getParameter("txtprecio"));
+                    int Stock = Integer.parseInt(request.getParameter("txtstock"));
 
+                    pro.setNom(Nombre);
+                    pro.setPrecio(Precio);
+                    pro.setStock(Stock);
+                    pdao.agregar(pro);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+
+                case "Editar":
+                    idprod = Integer.parseInt(request.getParameter("id"));
+                    Producto prod = pdao.listarId(idprod);
+                    request.setAttribute("producto", prod);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+
+                case "Actualizar":
+                    String Nomb = request.getParameter("txtnom");
+                    int Prec = Integer.parseInt(request.getParameter("txtprecio"));
+                    int Stoc = Integer.parseInt(request.getParameter("txtstock"));
+
+                    pro.setNom(Nomb);
+                    pro.setPrecio(Prec);
+                    pro.setStock(Stoc);
+                    pro.setId(idprod);
+
+                    pdao.Actualizar(pro);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+
+                case "Eliminar":
+                    idprod = Integer.parseInt(request.getParameter("id"));
+                    pdao.eliminar(idprod);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+
+                default:
+                    throw new AssertionError();
+            }
+            request.getRequestDispatcher("Producto.jsp").forward(request, response);
         }
+
         if (menu.equals("VentasNuevas")) {
 
             request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);

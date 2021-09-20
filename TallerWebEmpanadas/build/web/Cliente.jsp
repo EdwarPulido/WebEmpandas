@@ -38,8 +38,8 @@
                             <label>User</label>
                             <input type="text" value="${cliente.getUser()}" name="txtuser" class="form-control">
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-primary">
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-5">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5">
                     </form>
                 </div>
             </div>
