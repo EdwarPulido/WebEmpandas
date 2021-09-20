@@ -38,8 +38,11 @@
                             <label>User</label>
                             <input type="text" value="${cliente.getUser()}" name="txtuser" class="form-control">
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-5">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5">
+                        <div class="col-form-label text-center">
+                            <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-5">
+                            <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5">
+                        </div>
+
                     </form>
                 </div>
             </div>
@@ -65,7 +68,7 @@
                                 <td>${cli.getDirec()}</td>
                                 <td>${cli.getEstado()}</td>
                                 <td>${cli.getUser()}</td>
-                                
+
                                 <td>
                                     <a class="btn btn-primary" href="Controlador?menu=Cliente&accion=Editar&id=${cli.getId()}">EDITAR </a>
                                     <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Eliminar&id=${cli.getId()}">ELIMINAR</a>

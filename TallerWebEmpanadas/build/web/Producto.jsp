@@ -16,9 +16,9 @@
     <body>
         <div class="d-flex">
             <div class="card col-sm-5">
-                <div class="card-body">
+                <div class="card-body ">
                     <form action="Controlador?menu=Producto" method="POST">
-                        <div class="form-group">
+                        <div class="form-group ">
                             <label>Producto</label>
                             <input type="text" value="${producto.getNom()}" name="txtnom" class="form-control">
                         </div>
@@ -28,11 +28,12 @@
                         </div>
                         <div class="form-group">
                             <label>Cantidad</label>
-                            <input type="text" value="${producto.getStock()}" name="txtstock" class="form-control">
+                            <input type="text" value="${producto.getStock()}" name="txtstock" class="form-control ">
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-5 ">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5">
-                        
+                        <div class="col-form-label text-center">
+                            <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-4 ">
+                            <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-4">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -54,7 +55,6 @@
                                 <td>${pro.getNom()}</td>
                                 <td>${pro.getPrecio()}</td>
                                 <td>${pro.getStock()}</td>
-                                
                                 <td>
                                     <a class="btn btn-primary" href="Controlador?menu=Producto&accion=Editar&id=${pro.getId()}">EDITAR </a>
                                     <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Eliminar&id=${pro.getId()}">ELIMINAR</a>
@@ -70,6 +70,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     </body>
-    
-    
+
+
 </html>
