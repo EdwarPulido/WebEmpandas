@@ -22,6 +22,7 @@ public class Controlador extends HttpServlet {
 
     Empleado em = new Empleado();
     EmpleadoDAO edao = new EmpleadoDAO();
+    int idemple;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,32 +33,58 @@ public class Controlador extends HttpServlet {
         if (menu.equals("Principal")) {
             request.getRequestDispatcher("Principal.jsp").forward(request, response);
         }
-        if (menu.equals("Empleado")){
+        if (menu.equals("Empleado")) {
             switch (accion) {
-                
+
                 case "Listar":
                     List lista = edao.listar();
-                    request.setAttribute("empleados",lista);
+                    request.setAttribute("empleados", lista);
                     break;
-                    
+
                 case "Agregar":
-                    String Cedula=request.getParameter("txtcc");
-                    String Nombre=request.getParameter("txtnom");
-                    String Telefono=request.getParameter("txttel");
-                    String Estado=request.getParameter("txtest");
-                    String User=request.getParameter("txtuser");
+                    String Cedula = request.getParameter("txtcc");
+                    String Nombre = request.getParameter("txtnom");
+                    String Telefono = request.getParameter("txttel");
+                    String Estado = request.getParameter("txtest");
+                    String User = request.getParameter("txtuser");
                     em.setCedula(Cedula);
                     em.setNom(Nombre);
                     em.setTel(Telefono);
                     em.setEstado(Estado);
                     em.setUser(User);
                     edao.agregar(em);
-                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);                    
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                    break;
+
+                case "Editar":
+                    idemple = Integer.parseInt(request.getParameter("id"));
+                    Empleado emp = edao.listarId(idemple);
+                    request.setAttribute("empleado", emp);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                    break;
+
+                case "Actualizar":
+                    String Cedu = request.getParameter("txtcc");
+                    String Nomb = request.getParameter("txtnom");
+                    String Tele = request.getParameter("txttel");
+                    String Esta = request.getParameter("txtest");
+                    String Usu = request.getParameter("txtuser");
+                    em.setCedula(Cedu);
+                    em.setNom(Nomb);
+                    em.setTel(Tele);
+                    em.setEstado(Esta);
+                    em.setUser(Usu);
+                    
+                    em.setId(idemple);
+
+                    edao.Actualizar(em);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;
                     
-                case "Editar":
-                    break;
                 case "Eliminar":
+                    idemple=Integer.parseInt(request.getParameter("id"));
+                    edao.eliminar(idemple);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;
 
                 default:

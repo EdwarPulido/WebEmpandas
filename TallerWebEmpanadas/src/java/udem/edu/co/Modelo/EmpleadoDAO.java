@@ -117,8 +117,8 @@ public class EmpleadoDAO {
         return emp;
     }
 
-    public int actualizar(Empleado em) {//metodo para actualizar mediante la consulta sql
-        String sql = "UPDATE empleado  SET Cedula=?, Telefono=?, Estado=?,  Nombre=?, User=? WHERE IdEmpleado=? ";//consulta SQL para insertar
+    public int Actualizar(Empleado em) {//metodo para actualizar mediante la consulta sql
+        String sql = "UPDATE empleado  SET Cedula=?,Nombre=?, Telefono=?, Estado=?, User=? WHERE IdEmpleado=? ";//consulta SQL para insertar
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
