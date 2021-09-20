@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <label>User</label>
-                            <input type="text" value="${cliente.getUser()}"name="txtuser" class="form-control">
+                            <input type="text" value="${cliente.getUser()}" name="txtuser" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-primary">
@@ -57,14 +57,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="cli" items="${Cliente}">
+                        <c:forEach var="cli" items="${clientes}">
                             <tr>
-                                <td>${em.getId()}</td>
-                                <td>${em.getCedula()}</td>
-                                <td>${em.getNom()}</td>
-                                <td>${em.getDirec()}</td>
-                                <td>${em.getEstado()}</td>
-                                <td>${em.getUser()}</td>
+                                <td>${cli.getId()}</td>
+                                <td>${cli.getCedula()}</td>
+                                <td>${cli.getNom()}</td>
+                                <td>${cli.getDirec()}</td>
+                                <td>${cli.getEstado()}</td>
+                                <td>$cli.getUser()}</td>
                                 <td>
                                     <a class="btn btn-primary" href="Controlador?menu=Cliente&accion=Editar&id=${cli.getId()}">EDITAR </a>
                                     <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Eliminar&id=${cli.getId()}">ELIMINAR</a>
