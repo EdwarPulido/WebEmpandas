@@ -54,7 +54,6 @@ public class EmpleadoDAO {
     public List listar() {
         List<Empleado> lista = new ArrayList<>();
         String sql = "select * from Empleado";
-        
 
         try {
             con = cn.Conexion();
@@ -87,9 +86,8 @@ public class EmpleadoDAO {
             ps.setString(3, em.getTel());
             ps.setString(4, em.getEstado());
             ps.setString(5, em.getUser());
-            
+
             ps.executeUpdate();
-            
 
         } catch (Exception e) {
             System.out.println("El error es de tipo " + e);
@@ -98,7 +96,7 @@ public class EmpleadoDAO {
     }
 
     public Empleado listarId(int id) {
-        Empleado emp= new Empleado();
+        Empleado emp = new Empleado();
         String sql = "SELECT * FROM empleado WHERE IdEmpleado=" + id;
         try {
             con = cn.Conexion();
@@ -146,5 +144,5 @@ public class EmpleadoDAO {
             System.out.println("El error es de tipo " + e);
         }
     }
-    
+
 }

@@ -5,12 +5,15 @@
  */
 package udem.edu.co.controlador;
 
+import com.mysql.cj.xdevapi.Client;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import udem.edu.co.Modelo.Cliente;
+import udem.edu.co.Modelo.ClienteDAO;
 import udem.edu.co.Modelo.Empleado;
 import udem.edu.co.Modelo.EmpleadoDAO;
 
@@ -22,7 +25,11 @@ public class Controlador extends HttpServlet {
 
     Empleado em = new Empleado();
     EmpleadoDAO edao = new EmpleadoDAO();
+    Cliente cli = new Cliente();
+    ClienteDAO cdao = new ClienteDAO();
+
     int idemple;
+    int idclien;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -33,6 +40,7 @@ public class Controlador extends HttpServlet {
         if (menu.equals("Principal")) {
             request.getRequestDispatcher("Principal.jsp").forward(request, response);
         }
+
         if (menu.equals("Empleado")) {
             switch (accion) {
                 case "Listar":
@@ -70,27 +78,82 @@ public class Controlador extends HttpServlet {
                     em.setTel(Tele);
                     em.setEstado(Esta);
                     em.setUser(Usu);
-                    
+
                     em.setId(idemple);
 
                     edao.Actualizar(em);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;
-                    
+
                 case "Eliminar":
-                    idemple=Integer.parseInt(request.getParameter("id"));
+                    idemple = Integer.parseInt(request.getParameter("id"));
                     edao.eliminar(idemple);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;
-                
+
                 default:
                     throw new AssertionError();
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
         }
 
-        if (menu.equals("Clientes")) {
-            request.getRequestDispatcher("Clientes.jsp").forward(request, response);
+        if (menu.equals("Cliente")) {
+            switch (accion) {
+                case "Listar":
+                    List lista = cdao.listar();
+                    request.setAttribute("clientes", lista);
+                    break;
+                case "Agregar":
+                    String Cedula = request.getParameter("txtcc");
+                    String Nombre = request.getParameter("txtnom");
+                    String Direccion = request.getParameter("txtdirec");
+                    String Estado = request.getParameter("txtest");
+                    String User = request.getParameter("txtuser");
+                    cli.setCedula(Cedula);
+                    cli.setNom(Nombre);
+                    cli.setDirec(Direccion);
+                    cli.setEstado(Estado);
+                    cli.setUser(User);
+                    cdao.agregar(cli);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+
+                case "Editar":
+                    idclien = Integer.parseInt(request.getParameter("id"));
+                    Cliente clien = cdao.listarId(idclien);
+                    request.setAttribute("Cliente", clien);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+
+                case "Actualizar":
+                    String Cedu = request.getParameter("txtcc");
+                    String Nomb = request.getParameter("txtnom");
+                    String Direc = request.getParameter("txtdirec");
+                    String Esta = request.getParameter("txtest");
+                    String Usu = request.getParameter("txtuser");
+                    cli.setCedula(Cedu);
+                    cli.setNom(Nomb);
+                    cli.setDirec(Direc);
+                    cli.setEstado(Esta);
+                    cli.setUser(Usu);
+
+                    cli.setId(idclien);
+
+                    cdao.Actualizar(cli);
+
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+
+                case "Eliminar":
+                    idemple = Integer.parseInt(request.getParameter("id"));
+                    cdao.eliminar(idclien);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+
+                default:
+                    throw new AssertionError();
+            }
+            request.getRequestDispatcher("Cliente.jsp").forward(request, response);
         }
 
         if (menu.equals("Producto")) {
