@@ -109,6 +109,7 @@ public class Controlador extends HttpServlet {
                     List lista = cdao.listar();
                     request.setAttribute("clientes", lista);
                     break;
+                    
                 case "Agregar":
                     String Cedula = request.getParameter("txtcc");
                     String Nombre = request.getParameter("txtnom");
