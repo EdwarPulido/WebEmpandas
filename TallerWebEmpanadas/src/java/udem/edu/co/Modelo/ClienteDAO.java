@@ -49,7 +49,7 @@ public class ClienteDAO {
         return cli;
     }
 
-    //OPERACIONES CRUD
+    //OPERACIONES CRUD METODOS PARA LISTAR-AGREGAR-ACTUALIZAR-ELIMINAR-EDITAR 
     public List listar() {
         List<Cliente> lista = new ArrayList<>();
         String sql = "select * from Cliente";

@@ -77,7 +77,5 @@ public class Cliente {
     public void setUser(String user) {
         this.user = user;
     }
-    
-   
 
 }

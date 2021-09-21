@@ -25,7 +25,7 @@ public class ProductoDAO {
     int respuesta;
     
    
-//OPERACIONES CRUD
+//OPERACIONES CRUD METODOS PARA LISTAR-AGREGAR-ACTUALIZAR-ELIMINAR-EDITAR 
     public List listar() {
         List<Producto> lista = new ArrayList<>();
         String sql = "select * from Producto";
@@ -50,6 +50,7 @@ public class ProductoDAO {
         }
         return lista;
     }
+  
     
     public int agregar(Producto pro) {//Agregar en la base de datos 
         String sql = "insert into producto (Nombre,Precio,Stock) VALUES(?, ?, ?) ";//consulta SQL para insertar
@@ -70,7 +71,7 @@ public class ProductoDAO {
     
     public Producto listarId(int id) {
         Producto prod = new Producto();
-        String sql = "SELECT * FROM producto WHERE IdProducto=" + id;
+        String sql = "SELECT * FROM producto WHERE IdProducto=" + id; //consultada sql con idproducto
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -105,7 +106,7 @@ public class ProductoDAO {
     }
     
     public void eliminar(int id) {
-        String sql = "DELETE FROM producto WHERE IdProducto=" + id;
+        String sql = "DELETE FROM producto WHERE IdProducto=" + id;//consulta sql para buscar idproducto y delete
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);

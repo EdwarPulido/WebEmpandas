@@ -16,6 +16,7 @@ import udem.edu.co.config.Conexion;
  *
  * @author Edwar
  */
+
 //DAO esta relacionado directamente con la base de datos
 public class EmpleadoDAO {
 
@@ -50,7 +51,7 @@ public class EmpleadoDAO {
         return em;
     }
 
-    //OPERACIONES CRUD
+    //OPERACIONES CRUD METODOS PARA LISTAR-AGREGAR-ACTUALIZAR-ELIMINAR-EDITAR 
     public List listar() {
         List<Empleado> lista = new ArrayList<>();
         String sql = "select * from Empleado";

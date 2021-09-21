@@ -42,7 +42,6 @@
                             <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-5">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5">
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -68,21 +67,17 @@
                                 <td>${cli.getDirec()}</td>
                                 <td>${cli.getEstado()}</td>
                                 <td>${cli.getUser()}</td>
-
                                 <td>
                                     <a class="btn btn-primary" href="Controlador?menu=Cliente&accion=Editar&id=${cli.getId()}">EDITAR </a>
                                     <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Eliminar&id=${cli.getId()}">ELIMINAR</a>
                                 </td>
                             </tr>
-                        </c:forEach >  
-
+                        </c:forEach >
                     </tbody>
                 </table>
             </div>
         </div>
-
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     </body>
-
 </html>

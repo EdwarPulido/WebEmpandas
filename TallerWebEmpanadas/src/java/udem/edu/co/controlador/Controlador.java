@@ -43,7 +43,7 @@ public class Controlador extends HttpServlet {
         String accion = request.getParameter("accion");
         //******************************PRINCIPAL**********************************
         if (menu.equals("Principal")) {
-            request.getRequestDispatcher("Principal.jsp").forward(request, response);
+            request.getRequestDispatcher("Principal.jsp").forward(request, response); //actualizar tiempo real
         }
         //******************************EMPLEADO**********************************
         if (menu.equals("Empleado")) {
@@ -101,6 +101,7 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
         }
+
         //******************************CLIENTE**********************************
         if (menu.equals("Cliente")) {
             switch (accion) {
@@ -141,11 +142,8 @@ public class Controlador extends HttpServlet {
                     cli.setDirec(Direc);
                     cli.setEstado(Esta);
                     cli.setUser(Usu);
-
                     cli.setId(idclien);
-
                     cdao.Actualizar(cli);
-
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
 
@@ -154,12 +152,12 @@ public class Controlador extends HttpServlet {
                     cdao.eliminar(idclien);
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
-
                 default:
                     throw new AssertionError();
             }
             request.getRequestDispatcher("Cliente.jsp").forward(request, response);
         }
+
         //******************************PRODUCTO**********************************
         if (menu.equals("Producto")) {
             switch (accion) {
@@ -171,7 +169,6 @@ public class Controlador extends HttpServlet {
                     String Nombre = request.getParameter("txtnom");
                     int Precio = Integer.parseInt(request.getParameter("txtprecio"));
                     int Stock = Integer.parseInt(request.getParameter("txtstock"));
-
                     pro.setNom(Nombre);
                     pro.setPrecio(Precio);
                     pro.setStock(Stock);
@@ -190,12 +187,10 @@ public class Controlador extends HttpServlet {
                     String Nomb = request.getParameter("txtnom");
                     int Prec = Integer.parseInt(request.getParameter("txtprecio"));
                     int Stoc = Integer.parseInt(request.getParameter("txtstock"));
-
                     pro.setNom(Nomb);
                     pro.setPrecio(Prec);
                     pro.setStock(Stoc);
                     pro.setId(idprod);
-
                     pdao.Actualizar(pro);
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
@@ -205,16 +200,15 @@ public class Controlador extends HttpServlet {
                     pdao.eliminar(idprod);
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
-
                 default:
                     throw new AssertionError();
             }
             request.getRequestDispatcher("Producto.jsp").forward(request, response);
         }
 
-        if (menu.equals("VentasNuevas")) {
+        if (menu.equals("Venta")) {
 
-            request.getRequestDispatcher("RegistrarVenta.jsp").forward(request, response);
+            request.getRequestDispatcher("Venta.jsp").forward(request, response);
         }
     }
 

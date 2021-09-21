@@ -31,13 +31,11 @@
                         <a style="margin-left: 10px; border: none" class="btn btn-outline-ligth" href="Controlador?menu=Cliente&accion=Listar"" target="myFrame">CLIENTES</a>
                     </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="btn btn-outline-ligth" href="Controlador?menu=VentasNuevas" target="myFrame">NUEVA VENTA</a>
+                        <a style="margin-left: 10px; border: none" class="btn btn-outline-ligth" href="Controlador?menu=Venta" target="myFrame">NUEVA VENTA</a>
                     </li>
                 </ul>
             </div>
-
             <div class="dropdown">
-
                 <button style="border: none" class="btn btn-outline-ligth dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     ${usuario.getNom()}<%--imprimir usuario que logeo--%>
                 </button>
@@ -52,18 +50,12 @@
                         <button name="accion" value="Salir" class="dropdown-item" href="#"/>Salir</button><!-- ACCION SALIR -->
                     </form>
                 </div>
-
             </div>
         </nav>
         <div class="mt-5" style="height: 600px;">
-            <iframe name="myFrame" width="100%" height="215%" style="border:none">
-
-            </iframe>
-
+            <iframe name="myFrame" width="100%" height="215%" style="border:none"></iframe>
         </div>
-
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-
     </body>
 </html>
