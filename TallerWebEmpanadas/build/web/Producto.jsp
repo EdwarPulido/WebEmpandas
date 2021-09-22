@@ -41,7 +41,6 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>NOMBRE</th>
                             <th>PRECIO</th>
                             <th>CANTIDAD</th>
@@ -51,13 +50,12 @@
                     <tbody>
                         <c:forEach var="pro" items="${productos}">
                             <tr>
-                                <td>${pro.getId()}</td>
                                 <td>${pro.getNom()}</td>
                                 <td>${pro.getPrecio()}</td>
                                 <td>${pro.getStock()}</td>
                                 <td>
-                                    <a class="btn btn-primary" href="Controlador?menu=Producto&accion=Editar&id=${pro.getId()}">EDITAR </a>
-                                    <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Eliminar&id=${pro.getId()}">ELIMINAR</a>
+                                    <a class="btn btn-primary" href="Controlador?menu=Producto&accion=Editar&id=${pro.getId()}">AGREGAR </a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Eliminar&id=${pro.getId()}">QUITAR</a>
                                 </td>
                             </tr>
                         </c:forEach >
