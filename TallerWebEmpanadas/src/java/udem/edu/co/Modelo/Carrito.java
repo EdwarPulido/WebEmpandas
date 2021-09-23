@@ -12,8 +12,10 @@ package udem.edu.co.Modelo;
  *  @Author     : Edwar
  * 
  */
+
 public class Carrito {
     
+    //Definicion de atributos 
     int item;
     int idProducto;
     String nombre;
@@ -22,9 +24,11 @@ public class Carrito {
     int cantidad;
     double subtotal;
 
+    //LLAMADO AL CONSTRUCTOR Y SUS METODOS GET AND SET
     public Carrito() {
     }
 
+   
     public Carrito(int item, int idProducto, String nombre, String descipcion, double preciocompra, int cantidad, double subtotal) {
         this.item = item;
         this.idProducto = idProducto;

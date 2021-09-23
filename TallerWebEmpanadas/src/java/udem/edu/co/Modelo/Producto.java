@@ -7,16 +7,19 @@ package udem.edu.co.Modelo;
 
 /**
  *
- * @author Edwar
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
  */
 public class Producto {
-    
+    //Definicion de atributos 
     int id;
     String nom;
     int precio;
     int stock;
   
-
+//LLAMADO AL CONSTRUCTOR Y SUS METODOS GET AND SET
     public Producto() {
     }
 

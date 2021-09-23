@@ -20,7 +20,10 @@ import udem.edu.co.Modelo.ProductoDAO;
 
 /**
  *
- * @author Edwar
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
  */
 public class Controlador extends HttpServlet {
 
@@ -36,6 +39,7 @@ public class Controlador extends HttpServlet {
     int idclien;
     int idprod;
     
+    //CON EL CONTROLADOR procesar las peticiones  del menu y dependiendo el caso con puro txt
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -65,7 +69,7 @@ public class Controlador extends HttpServlet {
                     em.setEstado(Estado);
                     em.setUser(User);
                     edao.agregar(em);
-                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
+                    request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);//ACTUALIZAR LISTA EN TIEMPO REAL
                     break;
                 case "Editar":
                     idemple = Integer.parseInt(request.getParameter("id"));

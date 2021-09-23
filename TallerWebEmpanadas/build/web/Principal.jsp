@@ -12,7 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <title>JSP Page</title>
     </head>
-
+<%-- body con estilo url  --%>    
     <body  style="
            height: 885px;
            background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU9wEHcMh99scRf56N5Ru8cKBR06R9vQSyOJ9IWBMQbAauGEL8Ffq4vqPvFdyK5u89Qt0&usqp=CAU);
@@ -26,7 +26,7 @@
                     <li class="nav-item active">
                         <a style="margin-left: 10px; border: none"  class="btn btn-outline-ligth" >KsabeMejor</a>
                     </li>
-
+                    <%-- GRUPO LLAMADO MYFRAME PARA LOS ITEMS NAV dirijidos a controlador con la accion listar todo directo base de datos mediante sus metodos DAO--%>
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none"  class="btn btn-outline-ligth" href="Controlador?menu=Producto&accion=Listar" target="myFrame">PRODUCTO</a>
                     </li>
@@ -51,13 +51,14 @@
                     </a>
                     <a class="dropdown-item" href="#"> ${usuario.getUser()}</a>
                     <div class="dropdown-divider"></div>
-
+                        <%-- form para el boton de salir --%>    
                     <form action="Validar" method="POST">
                         <button name="accion" value="Salir" class="dropdown-item" href="#"/>Salir</button><!-- ACCION SALIR -->
                     </form>
                 </div>
             </div>
         </nav>
+                    
         <div class="mt-5" style="height: 600px;">
             <iframe  name="myFrame" width="100%" height="115%" style="border:none" ></iframe>
         </div>

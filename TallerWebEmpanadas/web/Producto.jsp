@@ -30,6 +30,7 @@
                             <label>Cantidad</label>
                             <input type="text" value="${producto.getStock()}" name="txtstock" class="form-control ">
                         </div>
+                        <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA PRODUCTO--%>  
                         <div class="col-form-label text-center">
                             <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-4 ">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-4">
@@ -37,6 +38,7 @@
                     </form>
                 </div>
             </div>
+            <%-- TABLA PARA LISTAR LOS DATOS DE LAS BD--%>  
             <div class="col-sm-7">
                 <table class="table table-hover">
                     <thead>
@@ -48,6 +50,7 @@
                             <th>ACCION</th>
                         </tr>
                     </thead>
+                    <%-- ETIQUETA ForEach para ejecutar cada elemento en el orden del array--%>  
                     <tbody>
                         <c:forEach var="pro" items="${productos}">
                             <tr>
@@ -56,6 +59,7 @@
                                 <td>${pro.getPrecio()}</td>
                                 <td>${pro.getStock()}</td>
                                 <td>
+                                    <%-- Botones con  la accion del producto editar y eliminar creados en DAO--%>  
                                     <a class="btn btn-primary" href="Controlador?menu=Producto&accion=Editar&id=${pro.getId()}">EDITAR </a>
                                     <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Eliminar&id=${pro.getId()}">ELIMINAR</a>
                                 </td>
@@ -65,9 +69,9 @@
                 </table>
             </div>
         </div>
-                    
+
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    
+
     </body>
 </html>

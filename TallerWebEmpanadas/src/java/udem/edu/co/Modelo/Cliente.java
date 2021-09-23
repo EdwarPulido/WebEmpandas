@@ -7,10 +7,13 @@ package udem.edu.co.Modelo;
 
 /**
  *
- * @author Edwar
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
  */
 public class Cliente {
-
+//Definicion de atributos 
     int id;
     String cedula;
     String nom;
@@ -18,6 +21,7 @@ public class Cliente {
     String estado;
     String user;
 
+    //LLAMADO AL CONSTRUCTOR Y SUS METODOS GET AND SET
     public Cliente() {
     }
 

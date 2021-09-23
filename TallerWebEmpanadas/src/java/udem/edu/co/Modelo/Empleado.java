@@ -7,9 +7,13 @@ package udem.edu.co.Modelo;
 
 /**
  *
- * @author Edwar
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
  */
 public class Empleado {
+    //Definicion de atributos 
     int id;
     String cedula;
     String nom;

@@ -14,16 +14,21 @@ import udem.edu.co.config.Conexion;
 
 /**
  *
- * @author Edwar
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
  */
 public class ClienteDAO {
 
+    //CONEXION A LA BASE DE DATOS
     Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
     int respuesta;
 
+    //METODO PARA VALIDAR EL INGRESO DE LOS DATOS PARA LOGIN
     public Cliente validar(String user, String cedula) {
         Cliente cli = new Cliente();
         String sql = "select * from cliente where User= ? and Cedula= ?";//consulta de campos puntuales sql

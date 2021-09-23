@@ -38,6 +38,7 @@
                             <label>User</label>
                             <input type="text" value="${empleado.getUser()}" name="txtuser" class="form-control">
                         </div>
+                        <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA EMPLEADO--%>  
                         <div class="col-form-label text-center">
                             <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-5">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5">
@@ -45,6 +46,7 @@
                     </form>
                 </div>
             </div>
+                        <%-- TABLA PARA LISTAR LOS DATOS DE LAS BD--%>  
             <div class="col-sm-7">
                 <table class="table table-hover">
                     <thead>
@@ -68,6 +70,7 @@
                                 <td>${em.getEstado()}</td>
                                 <td>${em.getUser()}</td>
                                 <td>
+                                    <%-- Botones con  la accion del Empleado editar y eliminar creados en EmpleadoDAO--%> 
                                     <a class="btn btn-primary" href="Controlador?menu=Empleado&accion=Editar&id=${em.getId()}">EDITAR </a>
                                     <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Eliminar&id=${em.getId()}">ELIMINAR</a>
                                 </td>

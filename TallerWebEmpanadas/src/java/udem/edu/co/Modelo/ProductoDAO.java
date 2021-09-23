@@ -14,10 +14,13 @@ import udem.edu.co.config.Conexion;
 
 /**
  *
- * @author Edwar
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
  */
 public class ProductoDAO {
-    
+    //CONEXION A LA BASE DE DATOS
     Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;

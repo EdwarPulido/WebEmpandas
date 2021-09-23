@@ -17,7 +17,7 @@
         <div class="d-flex">
             <div class="card col-sm-5">
                 <div class="card-body">
-                    <form action="Controlador?menu=Cliente" method="POST">
+                    <form action="Controlador?menu=Cliente" method="POST"><%-- llamado del controlador para menu cliente --%>  
                         <div class="form-group">
                             <label>Cedula</label>
                             <input type="text" value="${cliente.getCedula()}" name="txtcc" class="form-control">
@@ -38,6 +38,7 @@
                             <label>User</label>
                             <input type="text" value="${cliente.getUser()}" name="txtuser" class="form-control">
                         </div>
+                        <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA CLIENTE--%>  
                         <div class="col-form-label text-center">
                             <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-5">
                             <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5">
@@ -45,6 +46,7 @@
                     </form>
                 </div>
             </div>
+                        <%-- TABLA PARA LISTAR LOS DATOS DE LAS BD--%>  
             <div class="col-sm-7">
                 <table class="table table-hover">
                     <thead>
@@ -59,6 +61,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                         <%-- ETIQUETA ForEach para ejecutar cada elemento en el orden del array--%> 
                         <c:forEach var="cli" items="${clientes}">
                             <tr>
                                 <td>${cli.getId()}</td>
@@ -68,6 +71,7 @@
                                 <td>${cli.getEstado()}</td>
                                 <td>${cli.getUser()}</td>
                                 <td>
+                                    <%-- Botones con  la accion del Cliente editar y eliminar creados en DAO--%> 
                                     <a class="btn btn-primary" href="Controlador?menu=Cliente&accion=Editar&id=${cli.getId()}">EDITAR </a>
                                     <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Eliminar&id=${cli.getId()}">ELIMINAR</a>
                                 </td>

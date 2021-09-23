@@ -16,9 +16,14 @@ import udem.edu.co.Modelo.ClienteDAO;
 import udem.edu.co.Modelo.Empleado;
 import udem.edu.co.Modelo.EmpleadoDAO;
 
+
 /**
  *
- * @author Edwar
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
+ * 
  */
 public class Validar extends HttpServlet {
 
@@ -67,8 +72,11 @@ public class Validar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    
+    //DO POST ES EL METODO se usa para procesar el formulario FROM y DOGET
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
 

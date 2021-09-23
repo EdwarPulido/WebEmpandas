@@ -6,13 +6,15 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html><%-- INDEX DE LOGIN --%>
+
+<%-- INDEX DE LOGIN --%>
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <title>JSP Page</title>
     </head>
-
+<%-- BODY CON ESTILO BACKGROUND IMAGEN URL--%>
     <body style="
           height: 885px;
           background-image:url(https://u7.uidownload.com/vector/567/944/vector-orange-and-yellow-polygon-background-design-ai-eps.jpg);
@@ -25,9 +27,9 @@
                     <img src="Imagenes/NUEVO_LOGO_KASABE.png" alt="100" width="500" /><!-- imagenen logo -->
                     <label>
                         <h1>Bienvenidos KsabeMejor</h1>
-                       
                     </label>
                 </div>
+                <%--FROM GROUP Y CONTROL  PARA USUARIO Y CONTRASEÑA  --%>
                 <div class="form-group  col-form-label">
                     <label >USER</label><!-- Usuario nombre -->
                     <input type="text" name="txtuser" class="from-control ">
@@ -36,6 +38,7 @@
                     <label>PASS</label>
                     <input type="password" name="txtpass" class="from-control" >
                 </div>
+                <%-- ACCION CON VALOR DE INGRESAR--%>
                 <input type="submit" name="accion" value="Ingresar" class="btn btn-primary">
             </form>
         </div>

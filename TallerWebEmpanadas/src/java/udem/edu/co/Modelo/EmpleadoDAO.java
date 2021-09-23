@@ -14,18 +14,21 @@ import udem.edu.co.config.Conexion;
 
 /**
  *
- * @author Edwar
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
  */
 
 //DAO esta relacionado directamente con la base de datos
 public class EmpleadoDAO {
-
+//CONEXION A LA BASE DE DATOS
     Conexion cn = new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
     int respuesta;
-
+//METODO PARA VALIDAR EL INGRESO DE LOS DATOS PARA LOGIN
     public Empleado validar(String user, String cedula) {
         Empleado em = new Empleado();
         String sql = "select * from empleado where User= ? and Cedula= ?";//consulta de campos puntuales sql
