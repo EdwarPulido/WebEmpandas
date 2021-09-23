@@ -41,8 +41,9 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>NOMBRE</th>
-                            <th>PRECIO</th>
+                            <th>PRECIO UNIDAD</th>
                             <th>CANTIDAD</th>
                             <th>ACCION</th>
                         </tr>
@@ -50,12 +51,13 @@
                     <tbody>
                         <c:forEach var="pro" items="${productos}">
                             <tr>
+                                <td>${pro.getId()}</td>
                                 <td>${pro.getNom()}</td>
                                 <td>${pro.getPrecio()}</td>
                                 <td>${pro.getStock()}</td>
                                 <td>
-                                    <a class="btn btn-primary" href="Controlador?menu=Producto&accion=Editar&id=${pro.getId()}">AGREGAR </a>
-                                    <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Eliminar&id=${pro.getId()}">QUITAR</a>
+                                    <a class="btn btn-primary" href="Controlador?menu=Producto&accion=Editar&id=${pro.getId()}">EDITAR </a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Eliminar&id=${pro.getId()}">ELIMINAR</a>
                                 </td>
                             </tr>
                         </c:forEach >
@@ -63,7 +65,9 @@
                 </table>
             </div>
         </div>
+                    
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    
     </body>
 </html>

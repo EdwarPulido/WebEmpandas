@@ -61,13 +61,14 @@ public class ClienteDAO {
 
             while (rs.next()) {
                 Cliente cli = new Cliente();
-
+                
                 cli.setId(rs.getInt(1));
                 cli.setCedula(rs.getString(2));
                 cli.setNom(rs.getString(3));
                 cli.setDirec(rs.getString(4));
                 cli.setEstado(rs.getString(5));
                 cli.setUser(rs.getString(6));
+                
                 lista.add(cli);
             }
         } catch (Exception e) {

@@ -5,7 +5,6 @@
  */
 package udem.edu.co.controlador;
 
-import com.mysql.cj.xdevapi.Client;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -25,16 +24,18 @@ import udem.edu.co.Modelo.ProductoDAO;
  */
 public class Controlador extends HttpServlet {
 
+    
     Empleado em = new Empleado();
     EmpleadoDAO edao = new EmpleadoDAO();
     Cliente cli = new Cliente();
     ClienteDAO cdao = new ClienteDAO();
     Producto pro = new Producto();
     ProductoDAO pdao = new ProductoDAO();
-
+    
     int idemple;
     int idclien;
     int idprod;
+    
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -109,7 +110,7 @@ public class Controlador extends HttpServlet {
                     List lista = cdao.listar();
                     request.setAttribute("clientes", lista);
                     break;
-                    
+
                 case "Agregar":
                     String Cedula = request.getParameter("txtcc");
                     String Nombre = request.getParameter("txtnom");
@@ -207,9 +208,8 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Producto.jsp").forward(request, response);
         }
 
-        if (menu.equals("Venta")) {
-
-            request.getRequestDispatcher("Venta.jsp").forward(request, response);
+        if (menu.equals("Carrito")) {
+            request.getRequestDispatcher("Carrito.jsp").forward(request, response);
         }
     }
 
