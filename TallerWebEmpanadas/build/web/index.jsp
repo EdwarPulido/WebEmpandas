@@ -14,7 +14,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <title>JSP Page</title>
     </head>
-<%-- BODY CON ESTILO BACKGROUND IMAGEN URL--%>
+    <%-- BODY CON ESTILO BACKGROUND IMAGEN URL--%>
     <body style="
           height: 885px;
           background-image:url(https://u7.uidownload.com/vector/567/944/vector-orange-and-yellow-polygon-background-design-ai-eps.jpg);
@@ -32,14 +32,14 @@
                 <%--FROM GROUP Y CONTROL  PARA USUARIO Y CONTRASEÑA  --%>
                 <div class="form-group  col-form-label">
                     <label >USER</label><!-- Usuario nombre -->
-                    <input type="text" name="txtuser" class="from-control ">
+                    <input type="text" name="txtuser" class="from-control" required="">
                 </div>
                 <div class="form-group col-form-label " ><!-- Usuario contraseña -->
                     <label>PASS</label>
-                    <input type="password" name="txtpass" class="from-control" >
+                    <input type="password" name="txtpass" class="from-control" required="" >
                 </div>
                 <%-- ACCION CON VALOR DE INGRESAR--%>
-                <input type="submit" name="accion" value="Ingresar" class="btn btn-primary">
+                <input type="submit" required="required" name="accion" value="Ingresar" class="btn btn-primary"> 
             </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
