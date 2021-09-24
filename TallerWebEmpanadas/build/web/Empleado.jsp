@@ -20,23 +20,23 @@
                     <form action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
                             <label>Cedula</label>
-                            <input type="text" value="${empleado.getCedula()}" name="txtcc" class="form-control">
+                            <input type="text" value="${empleado.getCedula()}" name="txtcc" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="text" value="${empleado.getNom()}" name="txtnom" class="form-control">
+                            <input type="text" value="${empleado.getNom()}" name="txtnom" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" value="${empleado.getTel()}"name="txttel" class="form-control">
+                            <input type="text" value="${empleado.getTel()}"name="txttel" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" value="${empleado.getEstado()}" name="txtest" class="form-control">
+                            <input type="text" value="${empleado.getEstado()}" name="txtest" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>User</label>
-                            <input type="text" value="${empleado.getUser()}" name="txtuser" class="form-control">
+                            <input type="text" value="${empleado.getUser()}" name="txtuser" class="form-control"required="">
                         </div>
                         <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA EMPLEADO--%>  
                         <div class="col-form-label text-center">

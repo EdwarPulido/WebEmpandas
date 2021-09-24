@@ -20,23 +20,23 @@
                     <form action="Controlador?menu=Cliente" method="POST"><%-- llamado del controlador para menu cliente --%>  
                         <div class="form-group">
                             <label>Cedula</label>
-                            <input type="text" value="${cliente.getCedula()}" name="txtcc" class="form-control">
+                            <input type="text" value="${cliente.getCedula()}" name="txtcc" class="form-control "required="">
                         </div>
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="text" value="${cliente.getNom()}" name="txtnom" class="form-control">
+                            <input type="text" value="${cliente.getNom()}" name="txtnom" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>Direccion</label>
-                            <input type="text" value="${cliente.getDirec()}" name="txtdirec" class="form-control">
+                            <input type="text" value="${cliente.getDirec()}" name="txtdirec" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" value="${cliente.getEstado()}" name="txtest" class="form-control">
+                            <input type="text" value="${cliente.getEstado()}" name="txtest" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>User</label>
-                            <input type="text" value="${cliente.getUser()}" name="txtuser" class="form-control">
+                            <input type="text" value="${cliente.getUser()}" name="txtuser" class="form-control"required="">
                         </div>
                         <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA CLIENTE--%>  
                         <div class="col-form-label text-center">

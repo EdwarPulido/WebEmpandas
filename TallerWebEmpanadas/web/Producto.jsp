@@ -20,15 +20,15 @@
                     <form action="Controlador?menu=Producto" method="POST">
                         <div class="form-group ">
                             <label>Producto</label>
-                            <input type="text" value="${producto.getNom()}" name="txtnom" class="form-control">
+                            <input type="text" value="${producto.getNom()}" name="txtnom" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>Precio</label>
-                            <input type="text" value="${producto.getPrecio()}" name="txtprecio" class="form-control">
+                            <input type="text" value="${producto.getPrecio()}" name="txtprecio" class="form-control"required="">
                         </div>
                         <div class="form-group">
                             <label>Cantidad</label>
-                            <input type="text" value="${producto.getStock()}" name="txtstock" class="form-control ">
+                            <input type="text" value="${producto.getStock()}" name="txtstock" class="form-control "required="">
                         </div>
                         <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA PRODUCTO--%>  
                         <div class="col-form-label text-center">
