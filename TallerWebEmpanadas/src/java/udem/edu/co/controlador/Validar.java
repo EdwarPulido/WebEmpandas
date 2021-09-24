@@ -16,20 +16,21 @@ import udem.edu.co.Modelo.ClienteDAO;
 import udem.edu.co.Modelo.Empleado;
 import udem.edu.co.Modelo.EmpleadoDAO;
 
+
 /**
  *
- * @Document : Clientes
- * @Created on : 15/09/2021, 07:45:46 PM
- * @Author : Edwar
- *
- *
+ *  @Document   : Clientes
+ *  @Created on : 15/09/2021, 07:45:46 PM
+ *  @Author     : Edwar
+ * 
+ * 
  */
 public class Validar extends HttpServlet {
 
     EmpleadoDAO edao = new EmpleadoDAO();//instanciamos la clases EmpleadoDAO
     Empleado em = new Empleado();//instanciamos la clases Empleado
     Cliente cli = new Cliente();
-    ClienteDAO cdao = new ClienteDAO();
+    ClienteDAO cdao =new ClienteDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -71,15 +72,18 @@ public class Validar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    
     //DO POST ES EL METODO se usa para procesar el formulario FROM y DOGET
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
 
         if (accion.equalsIgnoreCase("Ingresar")) {
             String user = request.getParameter("txtuser");
             String pass = request.getParameter("txtpass");
+
             em = edao.validar(user, pass);//llamamos al metodo validar user para realizar al validacion
             cli = cdao.validar(user, pass);//llamamos al metodo validar user para realizar al validacion
 
@@ -90,11 +94,12 @@ public class Validar extends HttpServlet {
             if (cli.getUser() != null) {//validar usuario y redireccionar al controlador
                 request.setAttribute("usuario", cli);//ENVIAR USUARIO PASS A BOTTON USUARIO REGISTRADO
                 request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
-                
-            } else {//validar usuario y redireccionar al index
-                
+            } 
+            else {//validar usuario y redireccionar al index
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
+        } else {//Si no presiona ingresar
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 
