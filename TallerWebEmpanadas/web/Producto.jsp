@@ -13,6 +13,19 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <title>JSP Page</title>
     </head>
+
+    <script>
+        function alerta() //funcion para confirmar acciones en pagina 
+        {
+
+            var opcion = confirm("DESEAS ELIMINAR?");
+            if (opcion == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
     <body>
         <div class="d-flex">
             <div class="card col-sm-5">
@@ -20,15 +33,15 @@
                     <form action="Controlador?menu=Producto" method="POST">
                         <div class="form-group ">
                             <label>Producto</label>
-                            <input type="text" value="${producto.getNom()}" name="txtnom" class="form-control"required="">
+                            <input type="text" value="${producto.getNom()}" name="txtnom" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Precio</label>
-                            <input type="text" value="${producto.getPrecio()}" name="txtprecio" class="form-control"required="">
+                            <input type="text" value="${producto.getPrecio()}" name="txtprecio" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Cantidad</label>
-                            <input type="text" value="${producto.getStock()}" name="txtstock" class="form-control "required="">
+                            <input type="text" value="${producto.getStock()}" name="txtstock" class="form-control" required>
                         </div>
                         <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA PRODUCTO--%>  
                         <div class="col-form-label text-center">
@@ -61,7 +74,7 @@
                                 <td>
                                     <%-- Botones con  la accion del producto editar y eliminar creados en DAO--%>  
                                     <a class="btn btn-primary" href="Controlador?menu=Producto&accion=Editar&id=${pro.getId()}">EDITAR </a>
-                                    <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Eliminar&id=${pro.getId()}">ELIMINAR</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Eliminar&id=${pro.getId()}" onclick="return alerta()">ELIMINAR</a>
                                 </td>
                             </tr>
                         </c:forEach >

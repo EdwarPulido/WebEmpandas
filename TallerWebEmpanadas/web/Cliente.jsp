@@ -13,6 +13,19 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <title>JSP Page</title>
     </head>
+
+    <script>
+        function alerta()
+        {
+            
+            var opcion = confirm("DESEAS ELIMINAR?");
+            if (opcion == true) {
+               return true;
+            } else {
+               return false;
+            }
+        }
+    </script>
     <body>
         <div class="d-flex">
             <div class="card col-sm-5">
@@ -20,23 +33,23 @@
                     <form action="Controlador?menu=Cliente" method="POST"><%-- llamado del controlador para menu cliente --%>  
                         <div class="form-group">
                             <label>Cedula</label>
-                            <input type="text" value="${cliente.getCedula()}" name="txtcc" class="form-control "required="">
+                            <input type="text" value="${cliente.getCedula()}" name="txtcc" class="form-control " required>
                         </div>
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="text" value="${cliente.getNom()}" name="txtnom" class="form-control"required="">
+                            <input type="text" value="${cliente.getNom()}" name="txtnom" class="form-control" required=>
                         </div>
                         <div class="form-group">
                             <label>Direccion</label>
-                            <input type="text" value="${cliente.getDirec()}" name="txtdirec" class="form-control"required="">
+                            <input type="text" value="${cliente.getDirec()}" name="txtdirec" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" value="${cliente.getEstado()}" name="txtest" class="form-control"required="">
+                            <input type="text" value="${cliente.getEstado()}" name="txtest" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>User</label>
-                            <input type="text" value="${cliente.getUser()}" name="txtuser" class="form-control"required="">
+                            <input type="text" value="${cliente.getUser()}" name="txtuser" class="form-control" required=>
                         </div>
                         <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA CLIENTE--%>  
                         <div class="col-form-label text-center">
@@ -45,8 +58,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
-                        <%-- TABLA PARA LISTAR LOS DATOS DE LAS BD--%>  
+            </div><%-- TABLA PARA LISTAR LOS DATOS DE LAS BD--%>  
             <div class="col-sm-7">
                 <table class="table table-hover">
                     <thead>
@@ -61,7 +73,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                         <%-- ETIQUETA ForEach para ejecutar cada elemento en el orden del array--%> 
+                        <%-- ETIQUETA ForEach para ejecutar cada elemento en el orden del array--%> 
                         <c:forEach var="cli" items="${clientes}">
                             <tr>
                                 <td>${cli.getId()}</td>
@@ -73,7 +85,7 @@
                                 <td>
                                     <%-- Botones con  la accion del Cliente editar y eliminar creados en DAO--%> 
                                     <a class="btn btn-primary" href="Controlador?menu=Cliente&accion=Editar&id=${cli.getId()}">EDITAR </a>
-                                    <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Eliminar&id=${cli.getId()}">ELIMINAR</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Cliente&accion=Eliminar&id=${cli.getId()} " onclick="return alerta()">ELIMINAR </a>
                                 </td>
                             </tr>
                         </c:forEach >

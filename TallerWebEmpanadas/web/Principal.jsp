@@ -12,7 +12,20 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <title>JSP Page</title>
     </head>
-<%-- body con estilo url  --%>    
+    
+     <script>
+        function alerta() //funcion para confirmar acciones en pagina 
+        {
+
+            var opcion = confirm("DESEAS SALIR?");
+            if (opcion == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+    <%-- body con estilo url  --%>    
     <body  style="
            height: 885px;
            background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU9wEHcMh99scRf56N5Ru8cKBR06R9vQSyOJ9IWBMQbAauGEL8Ffq4vqPvFdyK5u89Qt0&usqp=CAU);
@@ -53,7 +66,7 @@
                     <div class="dropdown-divider"></div>
                         <%-- form para el boton de salir --%>    
                     <form action="Validar" method="POST">
-                        <button name="accion" value="Salir" class="dropdown-item" href="#"/>Salir</button><!-- ACCION SALIR -->
+                        <button onclick="return alerta()" name="accion" value="Salir" class="dropdown-item" href="#"/>Salir</button><!-- ACCION SALIR -->
                     </form>
                 </div>
             </div>

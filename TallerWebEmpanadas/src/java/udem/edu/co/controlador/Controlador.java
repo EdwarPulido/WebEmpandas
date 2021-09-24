@@ -154,10 +154,11 @@ public class Controlador extends HttpServlet {
                     break;
 
                 case "Eliminar":
-                    idemple = Integer.parseInt(request.getParameter("id"));
+                    idclien = Integer.parseInt(request.getParameter("id"));
                     cdao.eliminar(idclien);
                     request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
+                    
                 default:
                     throw new AssertionError();
             }

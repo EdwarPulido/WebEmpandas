@@ -13,6 +13,19 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
         <title>JSP Page</title>
     </head>
+    
+     <script>
+        function alerta()
+        {
+            
+            var opcion = confirm("DESEAS ELIMINAR?");
+            if (opcion == true) {
+               return true;
+            } else {
+               return false;
+            }
+        }
+    </script>
     <body>
         <div class="d-flex">
             <div class="card col-sm-5">
@@ -20,28 +33,28 @@
                     <form action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
                             <label>Cedula</label>
-                            <input type="text" value="${empleado.getCedula()}" name="txtcc" class="form-control"required="">
+                            <input type="text" value="${empleado.getCedula()}" name="txtcc" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="text" value="${empleado.getNom()}" name="txtnom" class="form-control"required="">
+                            <input type="text" value="${empleado.getNom()}" name="txtnom" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Telefono</label>
-                            <input type="text" value="${empleado.getTel()}"name="txttel" class="form-control"required="">
+                            <input type="text" value="${empleado.getTel()}"name="txttel" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Estado</label>
-                            <input type="text" value="${empleado.getEstado()}" name="txtest" class="form-control"required="">
+                            <input type="text" value="${empleado.getEstado()}" name="txtest" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>User</label>
-                            <input type="text" value="${empleado.getUser()}" name="txtuser" class="form-control"required="">
+                            <input type="text" value="${empleado.getUser()}" name="txtuser" class="form-control" required>
                         </div>
                         <%-- Div para Boton de AGREGAR Y ACTUALIZAR PARA EMPLEADO--%>  
                         <div class="col-form-label text-center">
                             <input type="submit" name="accion" value="Agregar" class="btn btn-info col-sm-5">
-                            <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5">
+                            <input type="submit" name="accion" value="Actualizar" class="btn btn-primary col-sm-5" >
                         </div>
                     </form>
                 </div>
@@ -72,7 +85,7 @@
                                 <td>
                                     <%-- Botones con  la accion del Empleado editar y eliminar creados en EmpleadoDAO--%> 
                                     <a class="btn btn-primary" href="Controlador?menu=Empleado&accion=Editar&id=${em.getId()}">EDITAR </a>
-                                    <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Eliminar&id=${em.getId()}">ELIMINAR</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Eliminar&id=${em.getId()}" onclick="return alerta()">ELIMINAR</a>
                                 </td>
                             </tr>
                         </c:forEach >

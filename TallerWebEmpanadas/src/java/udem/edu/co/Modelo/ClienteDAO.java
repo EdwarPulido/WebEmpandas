@@ -14,10 +14,10 @@ import udem.edu.co.config.Conexion;
 
 /**
  *
- *  @Document   : Clientes
- *  @Created on : 15/09/2021, 07:45:46 PM
- *  @Author     : Edwar
- * 
+ * @Document : Clientes
+ * @Created on : 15/09/2021, 07:45:46 PM
+ * @Author : Edwar
+ *
  */
 public class ClienteDAO {
 
@@ -66,14 +66,14 @@ public class ClienteDAO {
 
             while (rs.next()) {
                 Cliente cli = new Cliente();
-                
+
                 cli.setId(rs.getInt(1));
                 cli.setCedula(rs.getString(2));
                 cli.setNom(rs.getString(3));
                 cli.setDirec(rs.getString(4));
                 cli.setEstado(rs.getString(5));
                 cli.setUser(rs.getString(6));
-                
+
                 lista.add(cli);
             }
         } catch (Exception e) {
@@ -81,7 +81,7 @@ public class ClienteDAO {
         }
         return lista;
     }
-    
+
     public int agregar(Cliente cli) {//Agregar en la base de datos 
         String sql = "insert into cliente (Cedula,Nombre,Direccion,Estado,User) VALUES(?, ?, ?, ?, ?) ";//consulta SQL para insertar
         try {
@@ -100,7 +100,7 @@ public class ClienteDAO {
         }
         return respuesta;
     }
-    
+
     public Cliente listarId(int id) {
         Cliente clien = new Cliente();
         String sql = "SELECT * FROM cliente WHERE IdCliente=" + id;
@@ -120,7 +120,7 @@ public class ClienteDAO {
         }
         return clien;
     }
-    
+
     public int Actualizar(Cliente cli) {//metodo para actualizar mediante la consulta sql
         String sql = "UPDATE cliente  SET Cedula=?,Nombre=?, Direccion=?, Estado=?, User=? WHERE IdCliente=? ";//consulta SQL para insertar
         try {
@@ -139,7 +139,7 @@ public class ClienteDAO {
         }
         return respuesta;
     }
-    
+
     public void eliminar(int id) {
         String sql = "DELETE FROM cliente WHERE IdCliente=" + id;
         try {
@@ -150,8 +150,5 @@ public class ClienteDAO {
             System.out.println("El error es de tipo " + e);
         }
     }
-    
-    
-    
 
 }
