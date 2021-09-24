@@ -32,11 +32,11 @@
                 <%--FROM GROUP Y CONTROL  PARA USUARIO Y CONTRASEÑA  --%>
                 <div class="form-group  col-form-label">
                     <label >USER</label><!-- Usuario nombre -->
-                    <input type="text" name="txtuser" class="from-control ">
+                    <input type="text" name="txtuser" class="from-control " required="">
                 </div>
                 <div class="form-group col-form-label " ><!-- Usuario contraseña -->
                     <label>PASS</label>
-                    <input type="password" name="txtpass" class="from-control" >
+                    <input type="password" name="txtpass" class="from-control" required="" >
                 </div>
                 <%-- ACCION CON VALOR DE INGRESAR--%>
                 <input type="submit" name="accion" value="Ingresar" class="btn btn-primary">
