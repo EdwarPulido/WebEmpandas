@@ -12,10 +12,15 @@ Proyecto web desarrollado con Java EE para la gestión de empleados dentro de un
 
 ## 📁 Estructura del proyecto
 ├── build/ # Archivos compilados
+
 ├── dist/ # Distribución del proyecto
+
 ├── nbproject/ # Configuración de NetBeans
+
 ├── src/ # Código fuente Java (Servlets, Beans)
+
 ├── web/ # Archivos JSP, HTML y recursos estáticos
+
 ├── build.xml # Script de construcción Ant
 
 ## 🔐 Funcionalidades
